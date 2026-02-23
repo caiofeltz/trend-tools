@@ -46,7 +46,7 @@ st.markdown("""
 
 # Título
 st.title("📊 Trends Dashboard")
-st.markdown("Análise avançada de palavras-chave com visualizações interativas")
+st.markdown("Análise de palavras-chave com raspagem de dados no Google Trends e Wikipedia. Faça upload do seu arquivo ou use um exemplo para começar!")
 st.markdown("---")
 
 # Sidebar
@@ -126,13 +126,9 @@ if upload_mode == "Upload de Arquivo":
 # Modo 2: Usar exemplo
 else:
     col1, col2 = st.columns(2)
-    
-    with col1:
-        if st.button("📊 Carregar Exemplo", key="example_btn"):
-            st.session_state.example_loaded = True
-    
+
+    example_path = "input_example.csv"
     with col2:
-        example_path = "input_example.csv"
         if os.path.exists(example_path):
             with open(example_path, 'rb') as f:
                 st.download_button(
@@ -142,6 +138,9 @@ else:
                     mime="text/csv",
                     key="download_example_btn"
                 )
+            st.session_state.example_loaded = True
+        else:
+            st.warning("Arquivo de exemplo não encontrado para download")
     
     if st.session_state.example_loaded:
         example_path = "input_example.csv"
