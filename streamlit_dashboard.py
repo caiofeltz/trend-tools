@@ -46,7 +46,8 @@ st.markdown("""
 
 # Título
 st.title("📊 Trends Dashboard")
-st.markdown("Análise de palavras-chave com raspagem de dados no Google Trends e Wikipedia. Faça upload do seu arquivo ou use um exemplo para começar!")
+st.markdown("Análise de palavras-chave com raspagem de dados no Google Trends e Wikipedia.")
+st.markdown("Baixe o exemplo da tabela e preencha com suas keywords para começar!")
 st.markdown("---")
 
 # Sidebar
@@ -55,7 +56,7 @@ with st.sidebar:
     
     upload_mode = st.radio(
         "Modo de entrada:",
-        ["Upload de Arquivo", "Usar Exemplo"]
+        ["Upload de Arquivo", "Exemplo da tabela"]
     )
 
 # Gerenciamento de estado
