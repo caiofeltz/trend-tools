@@ -129,7 +129,7 @@ else:
     col1, col2 = st.columns(2)
 
     example_path = "input_example.csv"
-    with col2:
+    with col1:
         if os.path.exists(example_path):
             with open(example_path, 'rb') as f:
                 st.download_button(
